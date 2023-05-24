@@ -5,7 +5,7 @@ import org.bukkit.command.CommandSender
 import org.bukkit.command.TabCompleter
 
 /**
- * X-Core コマンドの基底クラス。
+ * iomcCore コマンドの基底クラス。
  * @author Lutica
  */
 abstract class CommandBase : TabCompleter {

@@ -6,7 +6,7 @@ import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 
 /**
- * X-Core のコマンドを管理し、呼び出すレジストリです。
+ * iomcCore のコマンドを管理し、呼び出すレジストリです。
  */
 object CommandRegistry : CommandExecutor {
 

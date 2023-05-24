@@ -61,7 +61,6 @@ repositories {
 }
 
 dependencies {
-    compileOnly("net.skinsrestorer:skinsrestorer:14.1.4-SNAPSHOT")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.6.10")
     compileOnly("io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT")
     compileOnly("com.github.MilkBowl:VaultAPI:1.7")
@@ -104,42 +103,15 @@ bukkit {
             usage = "/cat [on/off]"
             permission = "iomccore.command.cat"
         }
-        register("hub") {
-            description = "ロビーに移動します。"
-            usage = "/hub help"
-        }
-        register("xtp") {
-            description = "保存された過去位置を用いてテレポートします。"
-            usage = "/xtp <world> [player]"
-            permission = "iomccore.command.xtp"
-            aliases = listOf("xteleport")
-        }
-        register("xtpreset") {
-            description = "xtpコマンドで用いる過去位置をリセットします。プレイヤーを省略した場合、全員分をリセットします。"
-            usage = "/xtpreset <world> [player]"
-            permission = "iomccore.command.xtpreset"
-            aliases = listOf("xteleportreset")
-        }
-        register("xphone") {
-            description = "X Phoneメニューを開くか、アイテム「X Phone」をもらう"
-            usage = "/xphone [get]"
-            permission = "iomccore.command.xphone"
-            aliases = listOf("phone", "p")
+        register("menu") {
+            description = "ゲームメニューを開く"
+            usage = "/menu"
+            permission = "iomccore.command.menu"
         }
         register("live") {
             description = "ライブ配信モードを切り替える"
             usage = "/live <on/off>"
             permission = "iomccore.command.live"
-        }
-        register("epshop") {
-            description = "エビパワーストアを開きます。"
-            usage = "/epshop"
-            permission = "iomccore.command.epshop"
-        }
-        register("hint") {
-            description = "ヒントメニューを開きます。"
-            usage = "/hint [hint-id]"
-            permission = "iomccore.command.hint"
         }
         register("counter") {
             description = "カウンター管理"
@@ -161,18 +133,13 @@ bukkit {
             usage = "/qchat <register/unregister/list>"
             permission = "iomccore.command.qchat"
         }
-        register("epeffectshop") {
-            description = "エビパワードラッグストアを開きます。"
-            usage = "/epeffectshop"
-            permission = "iomccore.command.epeffectshop"
-        }
         register("xreload") {
-            description = "X-Coreの設定をリロードします。"
+            description = "iomcCoreの設定をリロードします。"
             usage = "/xreload"
             permission = "iomccore.command.xreload"
         }
         register("xdebug") {
-            description = "X-Core Debug Command"
+            description = "iomcCore Debug Command"
             usage = "/xdebug"
             permission = "iomccore.command.xdebug"
         }
@@ -181,21 +148,6 @@ bukkit {
             usage = "/stamp listDonePlayers"
             permission = "iomccore.command.stamp"
         }
-        register("firework") {
-            description = "花火大会用コマンド"
-            usage = "/firework <run|center> <scriptName>"
-            permission = "iomccore.command.firework"
-        }
-        register("farmfest") {
-            description = "秋農業祭り用コマンド"
-            usage = "/farmfest <clearFarm|add|init|start|stop>"
-            permission = "iomccore.command.farmfest"
-        }
-        register("candystore") {
-            description = "アメストアを開きます。"
-            usage = "/candystore"
-            permission = "iomccore.command.candystore"
-        }
         register("__core_gui_event__") {
             description = "?"
             usage = "?"
@@ -203,12 +155,6 @@ bukkit {
     }
 
     permissions {
-        register("iomccore.command.pvp") {
-            default = Default.OP
-        }
-        register("iomccore.command.givecustomitem") {
-            default = Default.OP
-        }
         register("iomccore.command.givemobball") {
             default = Default.OP
         }
