@@ -1,16 +1,16 @@
 <div align="center">
 
-# X-Core
+# iomcCore
 
-_**A Core System Plugin for XelticaMC.**_
+_**A Core System Plugin for Misskey.io Minecraft.**_
 
 </div>
 
-XelticaMCの基幹となる、コアシステム プラグイン「X-Core」の開発プロジェクトです。
+Misskey.io Minecraftの基幹となる、コアシステム プラグイン「iomcCore」の開発プロジェクトです。
 
 ## 📖 開発ドキュメント
 
-[X-Core Developer's Documentation](docs/README.md)
+[iomcCore Developer's Documentation](docs/README.md)
 
 ## 🔧 ビルド方法
 
@@ -19,7 +19,7 @@ XelticaMCの基幹となる、コアシステム プラグイン「X-Core」の�
 
 ## コントリビューション
 
-X-Core はオープンソース プロジェクトですが、開発はXelticaMCスタッフチーム 開発グループのメンバーが担当しており、本メンバー以外のプルリクエストは受け付けません。
+iomcCore はオープンソース プロジェクトですが、開発はMisskey.io 運営が担当しており、本メンバー以外のプルリクエストは受け付けません。
 
 ## 💳 ライセンス
 
