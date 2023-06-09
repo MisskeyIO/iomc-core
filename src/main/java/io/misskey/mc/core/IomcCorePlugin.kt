@@ -12,7 +12,6 @@ import io.misskey.mc.core.api.playerStore.PlayerStore
 import io.misskey.mc.core.gui.Gui
 import io.misskey.mc.core.modules.counter.CounterModule
 import io.misskey.mc.core.modules.ranking.RankingModule
-import io.misskey.mc.core.utils.Ticks
 
 /**
  * iomcCore のメインクラスであり、構成する要素を初期化・管理しています。
@@ -88,7 +87,6 @@ class IomcCorePlugin : JavaPlugin() {
         PlayerStore.onEnable()
         Gui.onEnable()
         CommandRegistry.register("xdebug", CommandXDebug())
-        TimeObserver().runTaskTimer(this, 0, Ticks.from(1.0).toLong())
 
         Bukkit.getOnlinePlayers().forEach { it.updateCommands() }
     }

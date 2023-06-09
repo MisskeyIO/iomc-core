@@ -35,7 +35,7 @@ bukkit {
     name = "IomcCore"
     main = "io.misskey.mc.core.IomcCorePlugin"
     version = getVersion().toString()
-    apiVersion = "1.19.4"
+    apiVersion = "1.19"
 
     commands {
         register("counter") {
