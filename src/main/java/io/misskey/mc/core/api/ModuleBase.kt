@@ -5,8 +5,6 @@ import org.bukkit.event.Listener
 import io.misskey.mc.core.IomcCorePlugin
 import io.misskey.mc.core.api.commands.CommandBase
 import io.misskey.mc.core.api.commands.CommandRegistry
-import io.misskey.mc.core.modules.gameMenu.AppBase
-import io.misskey.mc.core.modules.gameMenu.GameMenuModule
 
 /**
  * モジュールの基底クラス。

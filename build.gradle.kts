@@ -15,61 +15,12 @@ plugins {
 
 repositories {
     mavenLocal()
-    maven {
-        url = uri("https://repo.maven.apache.org/maven2/")
-    }
-
-    maven {
-        url = uri("https://papermc.io/repo/repository/maven-public/")
-    }
-
-    maven {
-        url = uri("https://repo.codemc.org/repository/maven-public/")
-    }
-
-    maven {
-        url = uri("https://jitpack.io")
-    }
-
-    maven {
-        url = uri("https://m2.dv8tion.net/releases")
-    }
-
-    maven {
-        url = uri("https://repo.opencollab.dev/maven-snapshots")
-    }
-
-    maven {
-        url = uri("https://repo.opencollab.dev/maven-releases")
-    }
-
-    maven {
-        url = uri("https://repo.phoenix616.dev/")
-    }
-
-    maven {
-        url = uri("https://nexus.scarsz.me/content/groups/public/")
-    }
-    maven {
-        url = uri("https://repo.codemc.io/repository/maven-snapshots/")
-    }
-    maven {
-        name = "citizens"
-        url = uri("http://repo.citizensnpcs.co/")
-        isAllowInsecureProtocol = true
-    }
+    maven("https://repo.papermc.io/repository/maven-public/")
 }
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.6.10")
     compileOnly("io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT")
-    compileOnly("com.github.MilkBowl:VaultAPI:1.7")
-    compileOnly("net.luckperms:api:5.4")
-    compileOnly("de.tr7zw:item-nbt-api-plugin:2.11.1")
-    compileOnly("com.gmail.filoghost.holographicdisplays:holographicdisplays-api:2.4.0")
-    compileOnly("com.github.koca2000:NoteBlockAPI:1.6.1")
-    compileOnly("net.citizensnpcs:citizensapi:2.0.29-SNAPSHOT")
-    compileOnly("com.github.ucchyocean.lc:LunaChat:3.0.16")
 
     library("com.google.code.gson", "gson", "2.8.7")
     bukkitLibrary("com.google.code.gson", "gson", "2.8.7")
@@ -84,35 +35,9 @@ bukkit {
     name = "IomcCore"
     main = "io.misskey.mc.core.IomcCorePlugin"
     version = getVersion().toString()
-    apiVersion = "1.19"
-    softDepend = listOf("Citizens")
-    depend = listOf("Vault", "DiscordSRV", "HolographicDisplays", "NoteBlockAPI")
+    apiVersion = "1.19.4"
 
     commands {
-        register("omikuji") {
-            description = "おみくじを引きます。マイクラ内で1日に1回まで引けて、100エビパワーを消費します。"
-            usage = "/omikuji"
-        }
-        register("givemobball") {
-            description = "モブボールを入手します。"
-            usage = "/givemobball <playerName> [amount=1] [type:normal|super|ultra]"
-            permission = "iomccore.command.givemobball"
-        }
-        register("cat") {
-            description = "CATモードの有効/無効を切り替えるか、現在のモードを取得します。"
-            usage = "/cat [on/off]"
-            permission = "iomccore.command.cat"
-        }
-        register("menu") {
-            description = "ゲームメニューを開く"
-            usage = "/menu"
-            permission = "iomccore.command.menu"
-        }
-        register("live") {
-            description = "ライブ配信モードを切り替える"
-            usage = "/live <on/off>"
-            permission = "iomccore.command.live"
-        }
         register("counter") {
             description = "カウンター管理"
             usage = "/counter <register/unregister/cancel/bind/info/list/resetdaily>"
@@ -123,30 +48,10 @@ bukkit {
             usage = "/ranking <create/delete/query/list/set/unset/hologram>"
             permission = "iomccore.command.ranking"
         }
-        register("countdown") {
-            description = "カウントダウンを表示します。"
-            usage = "/countdown <秒数> [プレイヤー名...]"
-            permission = "iomccore.command.countdown"
-        }
-        register("qchat") {
-            description = "QuickChatの設定"
-            usage = "/qchat <register/unregister/list>"
-            permission = "iomccore.command.qchat"
-        }
-        register("xreload") {
-            description = "iomcCoreの設定をリロードします。"
-            usage = "/xreload"
-            permission = "iomccore.command.xreload"
-        }
         register("xdebug") {
             description = "iomcCore Debug Command"
             usage = "/xdebug"
             permission = "iomccore.command.xdebug"
-        }
-        register("stamp") {
-            description = "スタンプラリー用コマンド"
-            usage = "/stamp listDonePlayers"
-            permission = "iomccore.command.stamp"
         }
         register("__core_gui_event__") {
             description = "?"
@@ -155,46 +60,13 @@ bukkit {
     }
 
     permissions {
-        register("iomccore.command.givemobball") {
-            default = Default.OP
-        }
-        register("iomccore.command.cat") {
-            default = Default.OP
-        }
-        register("iomccore.command.debug") {
-            default = Default.OP
-        }
-        register("iomccore.command.menu") {
-            default = Default.OP
-        }
-        register("iomccore.command.live") {
-            default = Default.OP
-        }
         register("iomccore.command.counter") {
             default = Default.OP
         }
         register("iomccore.command.ranking") {
             default = Default.OP
         }
-        register("iomccore.command.countdown") {
-            default = Default.OP
-        }
-        register("iomccore.command.qchat") {
-            default = Default.OP
-        }
-        register("iomccore.command.xreload") {
-            default = Default.OP
-        }
         register("iomccore.command.xdebug") {
-            default = Default.OP
-        }
-        register("iomccore.command.stamp") {
-            default = Default.OP
-        }
-        register("iomccore.stamp.create") {
-            default = Default.OP
-        }
-        register("iomccore.stamp.destroy") {
             default = Default.OP
         }
     }

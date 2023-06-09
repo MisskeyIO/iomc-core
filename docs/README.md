@@ -9,7 +9,6 @@ iomcCoreは、Misskey.io Minecraft向けの独自機能プラグインです。
 [XelticaMC/X-Core](https://github.com/XelticaMC/X-Core) をフォークしているため、一部の記述に名残が残っている場合があります。
 
 - [Coding Style](coding-style.md) - コーディング規約
-- [Integration Hook](hook.md) - 連携フック
 - [Module System](module-system.md) - モジュールの導入
 - [Utility](utility.md) - 開発に役立つ、様々なユーティリティ `執筆中`
 - [Modules List](modules-list.md) - モジュール一覧

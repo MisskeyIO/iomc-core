@@ -5,7 +5,6 @@ import net.kyori.adventure.text.event.ClickEvent
 import net.kyori.adventure.text.format.Style
 import net.kyori.adventure.text.format.TextColor
 import net.kyori.adventure.text.format.TextDecoration
-import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.GameMode
@@ -26,11 +25,9 @@ import org.bukkit.inventory.meta.BookMeta
 import org.bukkit.scheduler.BukkitRunnable
 import io.misskey.mc.core.IomcCorePlugin
 import io.misskey.mc.core.api.commands.CommandRegistry
-import io.misskey.mc.core.modules.item.ItemModule
 import java.util.ArrayDeque
 import java.util.UUID
 import java.util.function.Consumer
-import java.util.function.Predicate
 
 /**
  * iomcCore GUI API。メニューやダイアログの表示、入力受付などを実現します。
@@ -113,48 +110,6 @@ class Gui : Listener {
         val okText = okButtonText ?: "OK"
 
         openDialogJavaImpl(player, title, content, callback, okText)
-    }
-
-    /**
-     * 現在参加中のプレイヤーを選択するメニューを開きます。
-     * @param player メニューを開くプレイヤー
-     * @param onSelect プレイヤーを選択した後に呼び出されるコールバック
-     */
-    fun openPlayersMenu(player: Player, onSelect: Consumer<Player>?) {
-        openPlayersMenu(player, "プレイヤーを選んでください", onSelect)
-    }
-
-    /**
-     * 現在参加中のプレイヤーを選択するメニューを開きます。
-     * @param player メニューを開くプレイヤー
-     * @param title メニューのタイトルを指定
-     * @param onSelect プレイヤーを選択した後に呼び出されるコールバック
-     */
-    fun openPlayersMenu(player: Player, title: String, onSelect: Consumer<Player>?) {
-        openPlayersMenu(player, title, onSelect, null)
-    }
-
-    /**
-     * 現在参加中のプレイヤーを選択するメニューを開きます。
-     * @param player メニューを開くプレイヤー
-     * @param title メニューのタイトル
-     * @param onSelect プレイヤーを選択した後に呼び出されるコールバック
-     * @param filter 表示するプレイヤーを選択するフィルター関数
-     */
-    fun openPlayersMenu(player: Player, title: String, onSelect: Consumer<Player>?, filter: Predicate<Player>?) {
-        var stream = Bukkit.getOnlinePlayers().stream()
-        if (filter != null) {
-            stream = stream.filter(filter)
-        }
-        val list = stream.map { p ->
-            val head = ItemModule.getPlayerHead(p)
-            val name = PlainTextComponentSerializer.plainText().serialize(p.displayName())
-            return@map MenuItem(name, {
-                onSelect?.accept(p)
-            }, head, p)
-        }.toList()
-
-        openMenu(player, title, list)
     }
 
     /**
