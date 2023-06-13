@@ -33,7 +33,7 @@ java.sourceCompatibility = JavaVersion.VERSION_17
 
 bukkit {
     name = "Timeattacker"
-    main = "io.misskey.mc.core.TimeattackerPlugin"
+    main = "io.misskey.mc.timeattacker.TimeattackerPlugin"
     version = getVersion().toString()
     apiVersion = "1.19"
 

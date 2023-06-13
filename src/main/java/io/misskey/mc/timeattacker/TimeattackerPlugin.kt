@@ -21,8 +21,7 @@ class TimeattackerPlugin : JavaPlugin() {
 
     override fun onEnable() {
         logger.info("${ChatColor.AQUA}------------------------------------------")
-        logger.info("  ${ChatColor.GREEN}iomcCore${ChatColor.GRAY} - Misskey.io Timeattacker Plugin")
-        logger.info("      ${ChatColor.GRAY}ver ${description.version}")
+        logger.info("  ${ChatColor.GREEN}Timeattacker${ChatColor.GRAY} ver ${description.version}")
         logger.info("${ChatColor.AQUA}------------------------------------------")
         instance = this
         initializeFoundation()
