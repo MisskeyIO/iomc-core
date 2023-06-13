@@ -21,9 +21,6 @@ repositories {
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.6.10")
     compileOnly("io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT")
-
-    library("com.google.code.gson", "gson", "2.8.7")
-    bukkitLibrary("com.google.code.gson", "gson", "2.8.7")
 }
 
 group = "io.misskey.mc.timeattacker"
