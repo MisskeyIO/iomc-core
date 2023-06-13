@@ -26,14 +26,14 @@ dependencies {
     bukkitLibrary("com.google.code.gson", "gson", "2.8.7")
 }
 
-group = "io.misskey.mc.core"
-version = "4.0.0-dev.1"
-description = "A Core System Plugin for Misskey.io Minecraft."
+group = "io.misskey.mc.timeattacker"
+version = "4.0.0"
+description = "Timeattack Plugin"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 bukkit {
-    name = "IomcCore"
-    main = "io.misskey.mc.core.IomcCorePlugin"
+    name = "Timeattacker"
+    main = "io.misskey.mc.core.TimeattackerPlugin"
     version = getVersion().toString()
     apiVersion = "1.19"
 
@@ -41,17 +41,17 @@ bukkit {
         register("counter") {
             description = "カウンター管理"
             usage = "/counter <register/unregister/cancel/bind/info/list/resetdaily>"
-            permission = "iomccore.command.counter"
+            permission = "timeattacker.command.counter"
         }
         register("ranking") {
             description = "ランキング管理"
             usage = "/ranking <create/delete/query/list/set/unset/hologram>"
-            permission = "iomccore.command.ranking"
+            permission = "timeattacker.command.ranking"
         }
         register("xdebug") {
-            description = "iomcCore Debug Command"
+            description = "timeattacker Debug Command"
             usage = "/xdebug"
-            permission = "iomccore.command.xdebug"
+            permission = "timeattacker.command.xdebug"
         }
         register("__core_gui_event__") {
             description = "?"
@@ -60,13 +60,13 @@ bukkit {
     }
 
     permissions {
-        register("iomccore.command.counter") {
+        register("timeattacker.command.counter") {
             default = Default.OP
         }
-        register("iomccore.command.ranking") {
+        register("timeattacker.command.ranking") {
             default = Default.OP
         }
-        register("iomccore.command.xdebug") {
+        register("timeattacker.command.xdebug") {
             default = Default.OP
         }
     }

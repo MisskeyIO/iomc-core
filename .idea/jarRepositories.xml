@@ -96,5 +96,10 @@
       <option name="name" value="maven10" />
       <option name="url" value="https://repo.codemc.io/repository/maven-snapshots/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven" />
+      <option name="name" value="maven" />
+      <option name="url" value="https://repo.papermc.io/repository/maven-public/" />
+    </remote-repository>
   </component>
 </project>
